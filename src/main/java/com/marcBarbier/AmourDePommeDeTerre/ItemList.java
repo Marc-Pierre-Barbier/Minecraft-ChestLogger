@@ -1,5 +1,6 @@
 package com.marcBarbier.AmourDePommeDeTerre;
 
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.block.ChestBlock;
 import net.minecraft.block.ContainerBlock;
 import net.minecraft.item.Item;
@@ -23,6 +24,7 @@ public class ItemList extends Item {
     }
 
     @Override
+    @MethodsReturnNonnullByDefault
     public ActionResultType onItemUse(ItemUseContext context) {
         BlockPos pos = context.getPos();
         if (used && context.getWorld().getBlockState(pos).getBlock() instanceof ContainerBlock) {
@@ -34,7 +36,6 @@ public class ItemList extends Item {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-ave
         } else {
             used = true;
         }
